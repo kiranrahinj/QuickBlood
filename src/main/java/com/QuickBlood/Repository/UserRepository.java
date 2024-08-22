@@ -2,14 +2,14 @@ package com.QuickBlood.Repository;
 
 import com.QuickBlood.Entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User,Integer>{
-
-    User findByName(String name);
-    @Query("from User u where u.bloodType=?1")
+    Optional<User> findByMobileNumber(String mobileNymber);
+    Optional<User> findByName(String name);
+    Optional<User> findByEmail(String email);
     List<User> findByBloodType(String bloodType);
     List<User> findByBloodTypeAndLocation(String bloodType,String location);
 }
