@@ -1,5 +1,6 @@
 package com.QuickBlood.Controller;
 
+import com.QuickBlood.DTO.UserDTO;
 import com.QuickBlood.Entity.User;
 import com.QuickBlood.Exception.QuickBloodException;
 import com.QuickBlood.Service.UserService;
@@ -23,7 +24,7 @@ public class UserController {
     private UserServiceImpl userService;
 
     @PostMapping("/addUser")
-    public ResponseEntity<?> addUser(@RequestBody @Valid User u) {
+    public ResponseEntity<?> addUser(@RequestBody @Valid UserDTO u) {
         try {
             return ResponseEntity.ok(userService.addUser(u));
         } catch (QuickBloodException exception) {
@@ -34,7 +35,7 @@ public class UserController {
     }
 
     @PutMapping("/upadateUser")
-    public ResponseEntity<?> updateUser(@RequestParam @Valid String name, @RequestBody @Valid User u) {
+    public ResponseEntity<?> updateUser(@RequestParam @Valid String name, @RequestBody @Valid UserDTO u) {
         try {
             return ResponseEntity.ok(userService.updateUser(name, u));
         } catch (QuickBloodException ex) {

@@ -1,5 +1,6 @@
 package com.QuickBlood.Service;
 
+import com.QuickBlood.DTO.UserDTO;
 import com.QuickBlood.Entity.User;
 import org.springframework.stereotype.Service;
 
@@ -7,10 +8,10 @@ import java.util.*;
 
 public interface UserService {
 
-    public User addUser(User user);
-    public String updateUser(String name, User u);
-    public User findUserByName(String name);
-    public List<User> findUserByBloodType(String name);
-    public List<User> findUserByBloodTypeAndLocation(String name,String location);
+    public UserDTO addUser(UserDTO user);
+    public String updateUser(String name, UserDTO u);
+    public UserDTO findUserByName(String name);
+    public List<UserDTO> findUserByBloodType(String name);
+    public List<UserDTO> findUserByBloodTypeAndLocation(String name,String location);
 
 }
