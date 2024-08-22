@@ -33,16 +33,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String updateUser(String name, User u) {
-<<<<<<< HEAD
-        User user=findUserByName(name);
-
-=======
         Optional<User> user1=userRepository.findByName(name);
         if(user1.isEmpty()){
             QuickBloodUtilsException.propogateBadRequestExcetpion("User is not present", ResponseCode.BAD_REQUEST);
         }
         User user=user1.get();
->>>>>>> 10276a1887fb5e2aa5fba68df9abcb708855c9cf
         if(u.getName()!=null)user.setName(u.getName());
         if(u.getBloodType()!=null)user.setBloodType(u.getBloodType());
         if(u.getLocation()!=null)user.setLocation(u.getLocation());
