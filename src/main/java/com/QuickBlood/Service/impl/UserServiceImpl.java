@@ -19,7 +19,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String updateUser(String name, User u) {
-//        name=name.trim();
         User user=findUserByName(name);
 
         if(u.getName()!=null)user.setName(u.getName());
