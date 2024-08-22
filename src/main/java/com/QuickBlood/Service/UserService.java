@@ -7,7 +7,7 @@ import java.util.*;
 
 public interface UserService {
 
-    public void addUser(User user);
+    public User addUser(User user);
     public String updateUser(String name, User u);
     public User findUserByName(String name);
     public List<User> findUserByBloodType(String name);
